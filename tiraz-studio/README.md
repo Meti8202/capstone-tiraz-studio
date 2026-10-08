@@ -1,23 +1,16 @@
-# Tiraz Studio
-
-Tiraz Studio is an order-planning and pricing application for knitters and crocheters in who create custom clothing and accessories. Many small makers receive customer requests through Instagram, Telegram or word of mouth and then manage measurements, material costs, payments, progress and deadlines using scattered notebooks, chat messages and memory. This makes it difficult to calculate a fair price, remember order details and know which projects need attention.
-
-The application gives a maker one organized workspace for turning a customer request into a priced and trackable order. The maker records the customer’s details, requested product, measurements, deadline, yarn requirements, material costs, estimated working time and expected profit margin. Tiraz Studio calculates a suggested quote while still allowing the maker to adjust the final selling price. Once the customer accepts the quote, it becomes an active order whose progress and payments can be updated.
-
-The primary user is an independent knitter or crocheter in Ethiopia who accepts custom orders. The first screen is a dashboard showing active orders, approaching deadlines, outstanding balances and material reminders. The Orders screen lists projects and allows them to be searched or filtered by status. The Quote Builder collects customer, measurement, material, labour and pricing information. The Order Workspace shows one order and allows its progress, payments and notes to be updated. The Material Price Book stores yarn and supply information used when preparing quotes.
-
-The first version uses a local data source containing sample yarns and materials. It uses routes for each screen, application state for orders and pricing and validated forms for quotes and progress updates. Later versions may add authentication, persistent storage, simple reports and a limited visual preview. The application does not include a marketplace, customer accounts, real-time messaging, online payments, or delivery tracking.
 
 ## Route Map
 
-| Route            | Screen              | Purpose                                                                 | Notes                  |
-|------------------|---------------------|-------------------------------------------------------------------------|------------------------|
-| `/`              | Studio Dashboard    | Active orders, deadlines, expected revenue, material reminders          | Index route            |
-| `/orders`        | Orders              | List + search/filter by status (draft, accepted, in-progress, completed)|                        |
-| `/orders/new`    | Quote Builder       | Enter customer, measurements, materials, labour, deadline, price        | Form                   |
-| `/orders/:id`    | Order Workspace     | View one order, update progress, record payments, add notes             | Dynamic route          |
-| `/materials`     | Material Price Book | Yarn types, current prices, quantities, suppliers                       |                        |
-| `*`              | Not Found           | Handle unknown URLs                                                     | Catch-all              |
+| Route          | Screen              | File                         | Notes     |
+| -------------- | ------------------- | ---------------------------- | --------- |
+| `/`            | Landing             | `app/page.js`                | Home      |
+| `/dashboard`   | Studio Dashboard    | `app/dashboard/page.js`      | App home  |
+| `/orders`      | Orders              | `app/orders/page.js`         |           |
+| `/orders/new`  | Quote Builder       | `app/orders/new/page.js`     | Form      |
+| `/orders/[id]` | Order Workspace     | `app/orders/[id]/page.js`    | Dynamic   |
+| `/materials`   | Material Price Book | `app/materials/page.js`      |           |
+| `*`            | Not Found           | `app/not-found.js`           | Catch-all |
+
 
 ## How to run
 

@@ -7,20 +7,3 @@ The application gives a maker one organized workspace for turning a customer req
 The primary user is an independent knitter or crocheter in Ethiopia who accepts custom orders. The first screen is a dashboard showing active orders, approaching deadlines, outstanding balances and material reminders. The Orders screen lists projects and allows them to be searched or filtered by status. The Quote Builder collects customer, measurement, material, labour and pricing information. The Order Workspace shows one order and allows its progress, payments and notes to be updated. The Material Price Book stores yarn and supply information used when preparing quotes.
 
 The first version uses a local data source containing sample yarns and materials. It uses routes for each screen, application state for orders and pricing and validated forms for quotes and progress updates. Later versions may add authentication, persistent storage, simple reports and a limited visual preview. The application does not include a marketplace, customer accounts, real-time messaging, online payments, or delivery tracking.
-
-## Route Map
-
-| Route            | Screen              | Purpose                                                                 | Notes                  |
-|------------------|---------------------|-------------------------------------------------------------------------|------------------------|
-| `/`              | Studio Dashboard    | Active orders, deadlines, expected revenue, material reminders          | Index route            |
-| `/orders`        | Orders              | List + search/filter by status (draft, accepted, in-progress, completed)|                        |
-| `/orders/new`    | Quote Builder       | Enter customer, measurements, materials, labour, deadline, price        | Form                   |
-| `/orders/:id`    | Order Workspace     | View one order, update progress, record payments, add notes             | Dynamic route          |
-| `/materials`     | Material Price Book | Yarn types, current prices, quantities, suppliers                       |                        |
-| `*`              | Not Found           | Handle unknown URLs                                                     | Catch-all              |
-
-## How to run
-
-```
-npm install
-npm run dev
