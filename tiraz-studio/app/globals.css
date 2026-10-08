@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-100: #f3ebe0;
+  --color-brand-200: #e6d5c0;
+  --color-ink: #2c241c;
+  --color-ink-muted: #5c4f42;
+  --color-accent: #c45c4a;
+  --color-accent-hover: #a3483a;
+  --color-surface: rgba(250, 246, 241, 0.92);
+  --color-border: rgba(92, 62, 44, 0.18);
+}
+
+@layer base {
+  body {
+    @apply bg-brand-100 text-ink font-sans antialiased min-h-screen;
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+}
